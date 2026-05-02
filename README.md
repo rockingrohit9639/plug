@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plug
 
-## Getting Started
+AI-verified security registry for MCP (Model Context Protocol) servers. The trust layer for the MCP ecosystem.
 
-First, run the development server:
+## What is Plug?
+
+Plug scans MCP servers for security issues and generates trust grades. Developers can:
+
+- **Browse** pre-scanned servers with security grades (A-F) and one-click install commands
+- **Scan** any MCP server by pasting a GitHub URL — get a full security report in seconds
+- **Install** with confidence using copy-paste commands for Claude Code, Cursor, and VS Code
+
+## Tech Stack
+
+| Layer | Tech |
+|-------|------|
+| Frontend | Next.js 16 (App Router) on Cloudflare Pages via `@opennextjs/cloudflare` |
+| Styling | Tailwind CSS 4 |
+| Linting | Biome |
+| Compiler | React Compiler |
+| Analysis engine | Cloudflare Workflows (durable, multi-step) |
+| Database + Realtime | Supabase (Postgres) |
+| LLM | Claude Haiku via Anthropic API |
+| Package manager | bun |
+
+## Development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+|---------|-------------|
+| `bun dev` | Start dev server |
+| `bun run build` | Production build |
+| `bun run lint` | Biome lint + format check |
+| `bun run format` | Auto-format with Biome |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/app/
+├── page.tsx                  # Homepage: search, categories, recent servers
+├── scan/page.tsx             # Scan new server by GitHub URL
+├── search/page.tsx           # Search results
+├── categories/page.tsx       # Category listing
+├── categories/[slug]/page.tsx # Servers filtered by category
+└── servers/[slug]/page.tsx   # Server detail: grade, tools, findings, install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Security Patterns Detected
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Hidden directives in tool descriptions (`<IMPORTANT>`, `<HIDDEN>`, `<SYSTEM>`)
+2. Filesystem path references (`~/.ssh`, `~/.cursor`, `~/.config`)
+3. Parameter exfiltration (innocent params as covert data channels)
+4. Cross-tool shadowing (one tool modifying another's behavior)
+5. Instruction injection ("Before using this tool, first read...")
+6. Obfuscation (base64, unicode tricks)
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployed to Cloudflare Pages with `@opennextjs/cloudflare`.

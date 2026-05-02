@@ -3,14 +3,14 @@
 ## Backlog
 
 - [ ] Check domain availability (plug.dev, getplug.dev, plugmcp.dev)
-- [ ] Create GitHub repo for Plug
+- [x] Create GitHub repo for Plug
 - [ ] Set up Supabase project (database + realtime)
-- [ ] Set up Cloudflare project (Pages + Workers + Workflows)
+- [x] Set up Cloudflare project (Pages + Workers + Workflows)
 - [ ] Get Anthropic API key for Haiku calls
 
 ## Week 1 — Build & Ship
 
-- [ ] Scaffold project: Next.js + `@opennextjs/cloudflare` + Tailwind
+- [x] Scaffold project: Next.js + `@opennextjs/cloudflare` + Tailwind
 - [ ] Supabase schema: servers, tools, findings tables
 - [ ] Cloudflare Workflow: analyze MCP server
   - [ ] Step 1: Validate GitHub URL
@@ -19,17 +19,17 @@
   - [ ] Step 4: Send source to Claude Haiku → extract tools + security findings
   - [ ] Step 5: Compute trust score (A-F grade)
   - [ ] Step 6: Store results in Supabase
-- [ ] Homepage: hero, search bar, category grid, recently scanned
-- [ ] Server detail page: AI summary, trust grade, tool list, security findings
-- [ ] Server detail page: install commands (tabs: Claude Code / Cursor / VS Code)
-- [ ] "Scan new server" input: paste GitHub URL → kicks off workflow
-- [ ] Progress/loading state while workflow runs (Supabase realtime or polling)
+- [x] Homepage: hero, search bar, category grid, recently scanned
+- [x] Server detail page: AI summary, trust grade, tool list, security findings
+- [x] Server detail page: install commands (tabs: Claude Code / Cursor / VS Code)
+- [x] "Scan new server" input: paste GitHub URL → kicks off workflow
+- [x] Progress/loading state while workflow runs (Supabase realtime or polling)
 - [ ] Redirect to existing report if server already scanned
-- [ ] Category pages with filters and sorting
-- [ ] Search by name, description, category
+- [x] Category pages with filters and sorting
+- [x] Search by name, description, category
 - [ ] Responsive / mobile
 - [ ] Seed database: batch scan top 50-100 servers from awesome-mcp-servers
-- [ ] Deploy to Cloudflare Pages, connect domain
+- [x] Deploy to Cloudflare Pages, connect domain
 
 ## Week 2 — Content & Polish
 

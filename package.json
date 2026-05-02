@@ -15,9 +15,12 @@
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.19.5",
+    "@supabase/supabase-js": "^2.105.1",
+    "@t3-oss/env-nextjs": "^0.13.11",
     "next": "16.2.4",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "zod": "^4.4.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
