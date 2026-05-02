@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/scan/route": "/api/scan",
+  "/categories/[slug]/page": "/categories/[slug]",
+  "/categories/page": "/categories",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/scan/page": "/scan",
+  "/search/page": "/search",
+  "/servers/[slug]/page": "/servers/[slug]"
+}

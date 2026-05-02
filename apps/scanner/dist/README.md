@@ -1,0 +1,1 @@
+This folder contains the built output assets for the worker "plug-scanner" generated at 2026-05-02T12:09:36.041Z.

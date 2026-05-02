@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "plug-scanner",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-02",
+  "compatibility_flags": ["nodejs_compat"],
+  "workflows": [
+    {
+      "name": "scan-mcp-server",
+      "binding": "SCAN_WORKFLOW",
+      "class_name": "ScanWorkflow"
+    }
+  ]
+}
